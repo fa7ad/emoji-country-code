@@ -21,7 +21,7 @@ const umdConfig = {
   output: {
     file: pkg.browser,
     format: 'umd',
-    name: 'countryFlag',
+    name: 'emojiFlag',
     sourcemap: true,
     exports: 'named'
   },
