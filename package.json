@@ -47,7 +47,8 @@
     "build": "rollup -c",
     "build:dev": "NODE_ENV=development yarn build",
     "lint": "eslint .",
-    "test": "ava --verbose"
+    "test": "ava --verbose",
+    "prepublish": "yarn build"
   },
   "ava": {
     "require": [
