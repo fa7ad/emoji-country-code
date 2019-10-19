@@ -25,7 +25,7 @@ jobs:
           node-version: 12
           registry-url: https://registry.npmjs.org/
       - run: yarn install
-      - run: yarn test
+      - run: yarn publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
 
@@ -40,6 +40,6 @@ jobs:
           registry-url: https://npm.pkg.github.com/
           scope: '@fa7ad'
       - run: yarn install
-      - run: yarn test
+      - run: yarn publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
