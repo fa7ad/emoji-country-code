@@ -1,6 +1,6 @@
 {
   "name": "emoji-country-code",
-  "version": "1.0.2-2",
+  "version": "1.0.2-3",
   "description": "Transform ISO 3166-1 country codes to Emoji flags",
   "main": "cjs/index.js",
   "module": "esm/index.js",
