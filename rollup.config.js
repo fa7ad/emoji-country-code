@@ -11,21 +11,16 @@ const config = {
   input,
   output: [
     { file: pkg.main, format: 'cjs', sourcemap: true, exports: 'named' },
-    { file: pkg.module, format: 'es', sourcemap: true, exports: 'named' }
+    { file: pkg.module, format: 'es', sourcemap: true, exports: 'named' },
+    {
+      file: pkg.browser,
+      format: 'umd',
+      name: 'emojiFlag',
+      sourcemap: true,
+      exports: 'named'
+    }
   ],
   plugins: plugins
 }
 
-const umdConfig = {
-  input,
-  output: {
-    file: pkg.browser,
-    format: 'umd',
-    name: 'emojiFlag',
-    sourcemap: true,
-    exports: 'named'
-  },
-  plugins: plugins
-}
-
-export default [config, umdConfig]
+export default config
