@@ -3,7 +3,8 @@ import {
   charMap,
   toUpper,
   shiftCodePoint,
-  codePointToString
+  codePointToString,
+  compose
 } from '../src/utils'
 
 test('toUpper: xxx => XXX', t => {
@@ -22,4 +23,14 @@ test('shiftCodePoint: 24 => a => 121', t => {
 
 test('codePointToString: 121 => y', t => {
   t.is('y', codePointToString([121]))
+})
+
+test('compose: addOne => square => 10 => 101', t => {
+  const addOne = x => x + 1
+  const square = x => x ** 2
+  const sqAddOne = compose(
+    addOne,
+    square
+  )
+  t.is(101, sqAddOne(10))
 })

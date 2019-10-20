@@ -1,7 +1,19 @@
-import { toUpper, shiftCodePoint, charMap, codePointToString } from './utils'
+import {
+  toUpper,
+  shiftCodePoint,
+  charMap,
+  codePointToString,
+  compose
+} from './utils'
 
-const toEmoji = charMap(shiftCodePoint(0x1f1a5))
+const mapToEmojiCodePoint = charMap(shiftCodePoint(0x1f1a5))
 
-export const fromCountryCode = code => codePointToString(toEmoji(toUpper(code)))
+const convertToEmoji = compose(
+  codePointToString,
+  mapToEmojiCodePoint,
+  toUpper
+)
+
+export const fromCountryCode = convertToEmoji
 
 export default { fromCountryCode }
