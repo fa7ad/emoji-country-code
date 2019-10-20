@@ -48,7 +48,7 @@
     "build:dev": "NODE_ENV=development yarn build",
     "lint": "eslint .",
     "test": "ava --verbose",
-    "prepublish": "yarn build"
+    "prepare": "yarn build"
   },
   "ava": {
     "require": [
